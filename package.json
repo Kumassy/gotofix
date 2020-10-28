@@ -1,0 +1,17 @@
+{
+  "name": "gotofix",
+  "version": "1.0.0",
+  "description": "make goto better",
+  "main": "main.js",
+  "repository": "git@github.com:Kumassy/gotofix.git",
+  "author": "Kumassy <kumassyii@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "terser": "^5.3.8"
+  },
+  "scripts": {
+    "terser": "terser --compress --mangle -- main.js",
+    "make": "bash make.sh"
+  }
+}

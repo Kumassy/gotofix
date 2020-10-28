@@ -1,1 +1,0 @@
-var s = document.createElement("script"); s.charset = "UTF-8"; s.src = "https://raw.githubusercontent.com/Kumassy/gotofix/main/main.js"; document.body.appendChild(s);

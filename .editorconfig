@@ -10,6 +10,9 @@ end_of_line = lf
 # editorconfig-tools is unable to ignore longs strings or urls
 max_line_length = off
 
+[*.js]
+indent_size = 4
+
 [*.{md,txt}]
 indent_style = space
 indent_size = 4

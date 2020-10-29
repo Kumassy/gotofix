@@ -4,8 +4,12 @@ main
 
     img
       box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5)
-      width: 50%
+      width: 80%
       text-align: center
+    @media screen and (max-width: 768px)
+      img
+        width: 100%
+        box-shadow: none
 
   .code-wrapper
     position: relative

@@ -5,13 +5,14 @@ sort_by = "weight"
 
 
 # 概要 {#overview}
+[GoToトラベル地域共通クーポン取扱店舗検索マップ](https://map.goto.jata-net.or.jp/) に、電子クーポンに対応しているかどうかをフィルタリングできる機能を追加します: 
+<div class="img-wrapper">
+    <img class="gotofix-map" src="map.png">
+</div>
+
 [GoToトラベル事業](https://goto.jata-net.or.jp/about/) を利用して旅行した場合、旅行代金の 35% が給付され、旅行代金の 15% 分の地域共通クーポンが交付されます。[地域共通クーポン](https://goto.jata-net.or.jp/coupon/) は紙クーポンもしくは電子クーポンとして配布されますが、電子クーポンは対応店舗が少なく、利用しにくいことが指摘されています。どちらの種類のクーポンが配布されるかは、旅行会社および予約方法に依存し、旅行者が自由に決めることはできません。
 
-地域共通クーポンを利用できる店舗は、[GoToトラベル地域共通クーポン取扱店舗検索マップ](https://map.goto.jata-net.or.jp/) で確認することができます。しかし、このマップでは電子クーポンに対応している店舗を探すことが難しいです。そこで、GoToFix は地域共通クーポン取扱店舗検索マップに電子クーポンに対応しているかどうかをフィルタリングできる機能を追加します: 
-
-<div class="img-wrapper">
-    <img class="gotofix-map" style="width: 50%" src="map.png">
-</div>
+地域共通クーポンを利用できる店舗は、[GoToトラベル地域共通クーポン取扱店舗検索マップ](https://map.goto.jata-net.or.jp/) で確認することができます。しかし、このマップでは電子クーポンに対応している店舗を探すことが難しいです。そこで、GoToFix は地域共通クーポン取扱店舗検索マップに電子クーポンに対応しているかどうかをフィルタリングできる機能を追加します。
 
 なお、GoToトラベル事業を利用するには、[GoToトラベル事業のご利用に当たっての遵守事項](https://goto.jata-net.or.jp/assets/docs/20200923_1754_gotojyunsyu.pdf) に同意した上で[新しい旅のエチケット](https://goto.jata-net.or.jp/info/2020091001.html) を実践する必要があります。
 
@@ -27,23 +28,133 @@ javascript:(function()%7Bif(window.gotofix)alert(&quot;gotofix: すでにスク�
 </div>
 </div>
 
-コピーできたら、これをブックマークとして登録してください。登録方法については、[ブックマークレットの登録方法](#register-bookmarklet) を参照してください
+コピーできたら、これをブックマークとして登録してください。
+
+### ブックマークレットの登録方法 {#register-bookmarklet}
+予め [事前準備](#usage-prerequisites) を読みソースコードをコピーしておいてください
+
+<details>
+    <summary>iPad (Chrome)</summary>
+    <div>
+        1. 適当なページをブックマークします。共有メニューからブックマークをタップしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_ipad_chrome_r1.png">
+        </div>
+        2. 再度共有メニューを開き、ブックマークを編集をタップしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_ipad_chrome_r2.png">
+        </div>
+        3. 名前を適当に変更し、URL の部分にコピーしたソースコードを貼り付けてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_ipad_chrome_r3.png">
+        </div>
+    </div>
+</details>
+<details>
+    <summary>Android (Chrome)</summary>
+    <div>
+        1. 適当なページをブックマークします。ハンバーガーメニューを開き、星マークをタップしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_android_chrome_r1.jpg">
+        </div>
+        2. 再度ハンバーガーメニューを開き、星マークをタップしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_android_chrome_r2.jpg">
+        </div>
+        3. 名前を適当に変更し、URL の部分にコピーしたソースコードを貼り付けてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_android_chrome_r3.jpg">
+        </div>
+    </div>
+</details>
+<details>
+    <summary>PC (Chrome)</summary>
+    <div>
+        1. 適当なページをブックマークします。アドレスバーにある星マークを選択してください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_chrome_r1.png">
+        </div>
+        2. 再度星マークを選択し、その他をクリックします
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_chrome_r2.png">
+        </div>
+        3. 名前を適当に変更し、URL の部分にコピーしたソースコードを貼り付けてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_chrome_r3.png">
+        </div>
+    </div>
+</details>
+<details>
+    <summary>PC (FireFox)</summary>
+    <div>
+        1. 適当なページをブックマークします。アドレスバーにある星マークをクリックして完了をクリックしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_firefox_r1.png">
+        </div>
+        2. ブックマーク一覧から先程登録したブックマークを **右クリック** し、情報を見るをクリックしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_firefox_r2.png">
+        </div>
+        3. 名前を適当に変更し、URL の部分にコピーしたソースコードを貼り付けてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_firefox_r3.png">
+        </div>
+    </div>
+</details>
+
 
 
 ### ブックマークレットの実行 {#usage-execute-bookmarklet}
 登録しておいた GoToFix ブックマークレットを実行します
 
-WIP
+<details>
+    <summary>iPad (Chrome)</summary>
+    <div>
+        <a href="https://map.goto.jata-net.or.jp/">GoToトラベル地域共通クーポン取扱店舗検索マップ</a> のページを開いてください。
+        アドレスバーにブックマークの登録名を入力し、表示されたブックマークをタップしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_ipad_chrome_u1.png">
+        </div>
+    </div>
+</details>
+<details>
+    <summary>Android (Chrome)</summary>
+    <div>
+        <a href="https://map.goto.jata-net.or.jp/">GoToトラベル地域共通クーポン取扱店舗検索マップ</a> のページを開いてください。
+        アドレスバーにブックマークの登録名を入力し、表示されたブックマークをタップしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_android_chrome_u1.jpg">
+        </div>
+    </div>
+</details>
+<details>
+    <summary>PC (Chrome)</summary>
+    <div>
+        <a href="https://map.goto.jata-net.or.jp/">GoToトラベル地域共通クーポン取扱店舗検索マップ</a> のページを開いてください。
+        アドレスバーにブックマークの登録名を入力し、表示されたブックマークをクリックしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_chrome_u1.png">
+        </div>
+    </div>
+</details>
+<details>
+    <summary>PC (FireFox)</summary>
+    <div>
+        <a href="https://map.goto.jata-net.or.jp/">GoToトラベル地域共通クーポン取扱店舗検索マップ</a> のページを開いてください。
+        ブックマーク一覧から登録したブックマークをクリックしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_firefox_u1.png">
+        </div>
+    </div>
+</details>
+
 
 ### 追加された機能を利用  {#usage-use-gotofix}
 ブックマークレットを実行すると、絞り込み検索に「検索オプション (gotofix)」が現れます。チェックマークを入れると、電子クーポンに対応した店のみ表示されます。
 
 <div class="img-wrapper">
-    <img class="map" style="width: 50%" src="map.png">
+    <img class="map" src="map.png">
 </div>
-
-# ブックマークレットの登録方法 {#register-bookmarklet}
-WIP
 
 # Contributing {#contributing}
 コントリビューションを広く受け付けています

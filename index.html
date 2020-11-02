@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GoToFix- 電子クーポンに対応した店舗をフィルタリングする方法</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #88D498;
+        /* Primary theme text color */
+        --primary-text-color: #114B5F;
+        /* Primary theme link color */
+        --primary-link-color: #1A936F;
+        /* Secondary color: the background body color */
+        --secondary-color: #F3E9D2;
+        --secondary-text-color: #1A936F;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #C6DABF;
+    }
+</style>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;gotofix.kumassy.com&#x2F;juice.css">
+    
+<link rel="stylesheet" href="styles.css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HCWL5HFHPH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-HCWL5HFHPH');
+</script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#88d498">
+<meta name="msapplication-TileColor" content="#88d498">
+<meta name="theme-color" content="#88d498">
+
+<meta name="description" content="地域共通クーポンの電子クーポンを使いたいのに、使える店舗が分かりづらい！と思ったことはありませんか？ GoToトラベル地域共通クーポン取扱店舗検索マップで、電子クーポンに対応している店舗をフィルタリングする方法を紹介します">
+
+</head>
+
+<body>
+    
+
+    <header class="pos-absolute" style="background-color: transparent">
+        
+
+<a href="https:&#x2F;&#x2F;gotofix.kumassy.com&#x2F;">
+    <div class="logo">
+        <img src="https:&#x2F;&#x2F;gotofix.kumassy.com&#x2F;logo_120.png" alt="logo">
+        GoToFix
+    </div>
+</a>
+
+<nav>
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https:&#x2F;&#x2F;github.com&#x2F;Kumassy&#x2F;gotofix">Github</a>
+        
+    
+</nav>
+
+    </header>
+
+    <div class="hero">
+        
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<section class="text-center">
+    <h1 class="heading-text" style="font-size: 50px">
+        GoToFix
+    </h1>
+    <h3 class="title-text">
+        地域共通クーポン（電子クーポン）に対応した店舗をフィルタリングする方法
+    </h3>
+    <div>
+        <a class="github-button" href="https://github.com/Kumassy/gotofix" data-size="large" data-show-count="true"
+            aria-label="Star Kumassy/gotofix on GitHub">Star</a>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+          data-text="GoToFix- 電子クーポンに対応した店舗をフィルタリングする方法 #電子クーポン #フィルタリング" data-show-count="false">Tweet</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</section>
+<img class="hero-image" style="width: 50%" src="https:&#x2F;&#x2F;gotofix.kumassy.com&#x2F;logo_480.png">
+
+<div class="explore-more text" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+    使い方を見る ⇩
+</div>
+<style>
+    .hero section {
+        padding: 0 5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        .hero section {
+            padding: 0 2rem;
+        }
+
+        .hero-image {
+            display: none
+        }
+    }
+</style>
+
+    </div>
+
+    
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://gotofix.kumassy.com/#overview">概要</a>
+                </div>
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://gotofix.kumassy.com/#usage">使い方</a>
+                </div>
+                
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://gotofix.kumassy.com/#usage-prerequisites"><small>- 事前準備</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://gotofix.kumassy.com/#register-bookmarklet"><small>- ブックマークレットの登録方法</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://gotofix.kumassy.com/#usage-execute-bookmarklet"><small>- ブックマークレットの実行</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://gotofix.kumassy.com/#usage-use-gotofix"><small>- 追加された機能を利用</small></a>
+                </div>
+                
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://gotofix.kumassy.com/#contributing">Contributing</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<h1 id="overview">概要</h1>
+<p><a href="https://goto.jata-net.or.jp/coupon/">地域共通クーポン</a> の電子クーポンを使いたいのに、使える店舗が分かりづらい！と思ったことはありませんか？ GoToFix は <a href="https://map.goto.jata-net.or.jp/">GoToトラベル地域共通クーポン取扱店舗検索マップ</a> に、電子クーポンに対応しているかどうかをフィルタリングできる機能を追加します: </p>
+<div class="img-wrapper">
+    <img class="gotofix-map" src="map.png">
+</div>
+<p><a href="https://goto.jata-net.or.jp/about/">GoToトラベル事業</a> を利用して旅行した場合、旅行代金の 35% が給付され、旅行代金の 15% 分の地域共通クーポンが交付されます。<a href="https://goto.jata-net.or.jp/coupon/">地域共通クーポン</a> は紙クーポンもしくは電子クーポンとして配布されますが、電子クーポンは対応店舗が少なく、利用しにくいことが指摘されています。どちらの種類のクーポンが配布されるかは、旅行会社および予約方法に依存し、旅行者が自由に決めることはできません。</p>
+<p>地域共通クーポンを利用できる店舗は、<a href="https://map.goto.jata-net.or.jp/">GoToトラベル地域共通クーポン取扱店舗検索マップ</a> で確認することができます。しかし、このマップでは電子クーポンに対応している店舗を探すことが難しいです。そこで、GoToFix は地域共通クーポン取扱店舗検索マップに電子クーポンに対応しているかどうかをフィルタリングできる機能を追加します。</p>
+<p>なお、GoToトラベル事業を利用するには、<a href="https://goto.jata-net.or.jp/assets/docs/20200923_1754_gotojyunsyu.pdf">GoToトラベル事業のご利用に当たっての遵守事項</a> に同意した上で<a href="https://goto.jata-net.or.jp/info/2020091001.html">新しい旅のエチケット</a> を実践する必要があります。</p>
+<h1 id="usage">使い方</h1>
+<p>GoToトラベル地域共通クーポン取扱店舗検索マップに電子クーポンに対応した店舗をフィルタリングできる機能を追加する方法を示します</p>
+<h3 id="usage-prerequisites">事前準備</h3>
+<p>GoToFix による機能を追加するための「ブックマークレット」の登録作業を行います。まず、下のソースコードをコピーしてください。</p>
+<div class="code-wrapper">
+<button id="copy">コピーする</button>
+<div id="code">
+javascript:(function()%7Bif(window.gotofix)alert(&quot;gotofix: すでにスクリプトが読み込まれています&quot;);else{window.gotofix={},window.gotofix.onlye=!1;const o=document.getElementById(&quot;sl-root&quot;),t=angular.element(o).injector().get(&quot;configService&quot;),e=angular.element(o).injector().get(&quot;pointService&quot;);window.gotofix.testFilter=t.testFilter,t.testFilter=function(o,t,e,i,n){return window.gotofix.onlye?&quot;1&quot;===o[&quot;電子クーポン&quot;]&amp;&amp;window.gotofix.testFilter(o,t,e,i,n):window.gotofix.testFilter(o,t,e,i,n)};let i=&#039;\n    &lt;div class=&quot;conditions-wrapper&quot;&gt;        &lt;h4&gt;        &lt;img class=&quot;icon&quot; alt=&quot;検索オプション (gotofix)&quot; title=&quot;検索オプション (gotofix)&quot; src=&quot;/static/maps/gotocp/images/icon_other.png&quot;&gt;        &lt;span&gt;検索オプション (gotofix v0.1)&lt;/span&gt;        &lt;/h4&gt;        &lt;ul class=&quot;conditions&quot;&gt;        &lt;li id=&quot;gotofix-ui-onlye&quot;&gt;            &lt;i class=&quot;material-icons theme-color&quot; &gt;check_box_outline_blank&lt;/i&gt;            &lt;div class=&quot;name&quot;&gt;電子クーポン対応&lt;/div&gt;        &lt;/li&gt;        &lt;/ul&gt;    &lt;/div&gt;    &#039;;const n=document.createElement(&quot;div&quot;);n.innerHTML=i,n.id=&quot;gotofix-ui&quot;,document.querySelector(&quot;#sl-root .option-box&quot;).appendChild(n),document.getElementById(&quot;gotofix-ui-onlye&quot;).addEventListener(&quot;click&quot;,(()=&gt;{window.gotofix.onlye?(n.querySelector(&quot;i&quot;).textContent=&quot;check_box_outline_blank&quot;,window.gotofix.onlye=!1,e.showMarkers()):(n.querySelector(&quot;i&quot;).textContent=&quot;check_box&quot;,window.gotofix.onlye=!0,e.showMarkers())})),document.querySelector(&quot;#sl-root .tab-switch li:first-child&quot;).addEventListener(&quot;click&quot;,(()=&gt;{n.style.display=&quot;block&quot;})),document.querySelector(&quot;#sl-root .tab-switch li:last-child&quot;).addEventListener(&quot;click&quot;,(()=&gt;{n.style.display=&quot;none&quot;})),alert(&quot;gotofix: スクリプトを読み込みました&quot;)}%7D)()
+</div>
+</div>
+<p>コピーできたら、これをブックマークとして登録してください。</p>
+<h3 id="register-bookmarklet">ブックマークレットの登録方法</h3>
+<p>予め <a href="https://gotofix.kumassy.com/#usage-prerequisites">事前準備</a> を読みソースコードをコピーしておいてください</p>
+<details>
+    <summary>iPad (Chrome)</summary>
+    <div>
+        1. 適当なページをブックマークします。共有メニューからブックマークをタップしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_ipad_chrome_r1.png">
+        </div>
+        2. 再度共有メニューを開き、ブックマークを編集をタップしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_ipad_chrome_r2.png">
+        </div>
+        3. 名前を適当に変更し、URL の部分にコピーしたソースコードを貼り付けてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_ipad_chrome_r3.png">
+        </div>
+    </div>
+</details>
+<details>
+    <summary>Android (Chrome)</summary>
+    <div>
+        1. 適当なページをブックマークします。ハンバーガーメニューを開き、星マークをタップしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_android_chrome_r1.jpg">
+        </div>
+        2. 再度ハンバーガーメニューを開き、星マークをタップしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_android_chrome_r2.jpg">
+        </div>
+        3. 名前を適当に変更し、URL の部分にコピーしたソースコードを貼り付けてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_android_chrome_r3.jpg">
+        </div>
+    </div>
+</details>
+<details>
+    <summary>PC (Chrome)</summary>
+    <div>
+        1. 適当なページをブックマークします。アドレスバーにある星マークを選択してください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_chrome_r1.png">
+        </div>
+        2. 再度星マークを選択し、その他をクリックします
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_chrome_r2.png">
+        </div>
+        3. 名前を適当に変更し、URL の部分にコピーしたソースコードを貼り付けてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_chrome_r3.png">
+        </div>
+    </div>
+</details>
+<details>
+    <summary>PC (FireFox)</summary>
+    <div>
+        1. 適当なページをブックマークします。アドレスバーにある星マークをクリックして完了をクリックしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_firefox_r1.png">
+        </div>
+        2. ブックマーク一覧から先程登録したブックマークを **右クリック** し、情報を見るをクリックしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_firefox_r2.png">
+        </div>
+        3. 名前を適当に変更し、URL の部分にコピーしたソースコードを貼り付けてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_firefox_r3.png">
+        </div>
+    </div>
+</details>
+<h3 id="usage-execute-bookmarklet">ブックマークレットの実行</h3>
+<p>登録しておいた GoToFix ブックマークレットを実行します</p>
+<details>
+    <summary>iPad (Chrome)</summary>
+    <div>
+        <a href="https://map.goto.jata-net.or.jp/">GoToトラベル地域共通クーポン取扱店舗検索マップ</a> のページを開いてください。
+        アドレスバーにブックマークの登録名を入力し、表示されたブックマークをタップしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_ipad_chrome_u1.png">
+        </div>
+    </div>
+</details>
+<details>
+    <summary>Android (Chrome)</summary>
+    <div>
+        <a href="https://map.goto.jata-net.or.jp/">GoToトラベル地域共通クーポン取扱店舗検索マップ</a> のページを開いてください。
+        アドレスバーにブックマークの登録名を入力し、表示されたブックマークをタップしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_android_chrome_u1.jpg">
+        </div>
+    </div>
+</details>
+<details>
+    <summary>PC (Chrome)</summary>
+    <div>
+        <a href="https://map.goto.jata-net.or.jp/">GoToトラベル地域共通クーポン取扱店舗検索マップ</a> のページを開いてください。
+        アドレスバーにブックマークの登録名を入力し、表示されたブックマークをクリックしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_chrome_u1.png">
+        </div>
+    </div>
+</details>
+<details>
+    <summary>PC (FireFox)</summary>
+    <div>
+        <a href="https://map.goto.jata-net.or.jp/">GoToトラベル地域共通クーポン取扱店舗検索マップ</a> のページを開いてください。
+        ブックマーク一覧から登録したブックマークをクリックしてください
+        <div class="img-wrapper">
+            <img class="usage" src="usage_pc_firefox_u1.png">
+        </div>
+    </div>
+</details>
+<h3 id="usage-use-gotofix">追加された機能を利用</h3>
+<p>ブックマークレットを実行すると、絞り込み検索に「検索オプション (gotofix)」が現れます。チェックマークを入れると、電子クーポンに対応した店のみ表示されます。</p>
+<div class="img-wrapper">
+    <img class="map" src="map.png">
+</div>
+<h1 id="contributing">Contributing</h1>
+<p>コントリビューションを広く受け付けています</p>
+<ul>
+<li>New issues (feature requests, bug reports, questions, ideas, ...)</li>
+<li>Pull requests (documentation improvements, code improvements, new features, ...)</li>
+</ul>
+
+
+        </div>
+
+    </main>
+
+    
+<footer>
+    <small class="subtext">
+        <a href="https://kumassy.com/">Kumassy</a> © 2020
+    </small>
+</footer>
+<script src="script.js"></script>
+
+</body>
+<script>
+    function highlightNav(heading) {
+        let pathname = location.pathname;
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+        document.querySelector(".toc a[href='" + pathname + "#" + heading + "']").classList.add("active");
+    }
+
+    let currentHeading = "";
+    window.onscroll = function () {
+        let h = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+        let elementArr = [];
+
+        h.forEach(item => {
+            if (item.id !== "") {
+                elementArr[item.id] = item.getBoundingClientRect().top;
+            }
+        });
+        elementArr.sort();
+        for (let key in elementArr) {
+            if (!elementArr.hasOwnProperty(key)) {
+                continue;
+            }
+            if (elementArr[key] > 0 && elementArr[key] < 300) {
+                if (currentHeading !== key) {
+                    highlightNav(key);
+                    currentHeading = key;
+                }
+                break;
+            }
+        }
+    }
+</script>
+
+</html>

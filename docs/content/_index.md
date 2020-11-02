@@ -1,11 +1,11 @@
 +++
-title = "GoToFix -  GoToトラベル地域共通クーポン取扱店舗検索マップをさらに見やすく"
+title = "GoToFix- 電子クーポンに対応した店舗をフィルタリングする方法"
 sort_by = "weight"
 +++
 
 
 # 概要 {#overview}
-[GoToトラベル地域共通クーポン取扱店舗検索マップ](https://map.goto.jata-net.or.jp/) に、電子クーポンに対応しているかどうかをフィルタリングできる機能を追加します: 
+[地域共通クーポン](https://goto.jata-net.or.jp/coupon/) の電子クーポンを使いたいのに、使える店舗が分かりづらい！と思ったことはありませんか？ GoToFix は [GoToトラベル地域共通クーポン取扱店舗検索マップ](https://map.goto.jata-net.or.jp/) に、電子クーポンに対応しているかどうかをフィルタリングできる機能を追加します: 
 <div class="img-wrapper">
     <img class="gotofix-map" src="map.png">
 </div>
@@ -17,7 +17,7 @@ sort_by = "weight"
 なお、GoToトラベル事業を利用するには、[GoToトラベル事業のご利用に当たっての遵守事項](https://goto.jata-net.or.jp/assets/docs/20200923_1754_gotojyunsyu.pdf) に同意した上で[新しい旅のエチケット](https://goto.jata-net.or.jp/info/2020091001.html) を実践する必要があります。
 
 # 使い方 {#usage}
-GoToトラベル地域共通クーポン取扱店舗検索マップに GoToFix による機能を追加する方法を示します
+GoToトラベル地域共通クーポン取扱店舗検索マップに電子クーポンに対応した店舗をフィルタリングできる機能を追加する方法を示します
 
 ### 事前準備 {#usage-prerequisites}
 GoToFix による機能を追加するための「ブックマークレット」の登録作業を行います。まず、下のソースコードをコピーしてください。

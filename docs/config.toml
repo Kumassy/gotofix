@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://gotofix.kumassy.com/"
 
-title = "GoToFix -  GoToトラベル地域共通クーポン取扱店舗検索マップをさらに見やすく"
+title = "GoToFix- 電子クーポンに対応した店舗をフィルタリングする方法"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
